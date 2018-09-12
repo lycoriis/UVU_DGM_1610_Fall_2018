@@ -9,10 +9,10 @@ public class CharacterMove : MonoBehaviour {
 	public float JumpHeight;
 
 	// Player Grounded Variables
-	public Transform groundCheck;
-	public float groundCheckRadius;
-	public LayerMask whatIsGround;
-	private bool grounded;
+	public Transform GroundCheck;
+	public float GroundCheckRadius;
+	public LayerMask WhatIsGround;
+	private bool Grounded;
 
 	// Use this for initialization
 	void Start () {
