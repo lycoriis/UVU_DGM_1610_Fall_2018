@@ -15,13 +15,10 @@ public class VarFunk : MonoBehaviour {
 	}
 	
 	//3 variables
-	public int MoveSpeed = 5;
-	public transform GroundCheck;
+	public int Moving = 5;
+	public int Grounding;
 	private float GroundCheckRadius;
-	public layermask WhatIsGround;
+	public bool WhatIsGround;
 
-	//Function
-	Void GroundCheck (int GroundCheck) { };
-	int MoveSpeed (int MoveSpeed) { };
 	
 }
