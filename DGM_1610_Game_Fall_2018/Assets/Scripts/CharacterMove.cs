@@ -35,6 +35,16 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.Space)&& Grounded){
 				Jump();
 		}
+
+		//DoubleJump Code
+		if(Grounded){
+			DoubleJump = true;
+		}
+
+		if(Input.GetKeyDown (KeyCode.Space)&& !DoubleJump && !Grounded){
+			Jump();
+			DoubleJump = true;
+		}
 		
 		//This code makes the character move from side to side using A&D keys
 		if(Input.GetKey (KeyCode.D)){
