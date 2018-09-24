@@ -7,12 +7,16 @@ public class CharacterMove : MonoBehaviour {
 	// Player Movement Variables
 	public int MoveSpeed;
 	public float JumpHeight;
+	private bool DoubleJump;
 
 	// Player Grounded Variables
 	public Transform GroundCheck;
 	public float GroundCheckRadius;
 	public LayerMask WhatIsGround;
 	private bool Grounded;
+
+	//Non-Stick Player
+	private float MoveVelocity;
 
 	// Use this for initialization
 	void Start () {
