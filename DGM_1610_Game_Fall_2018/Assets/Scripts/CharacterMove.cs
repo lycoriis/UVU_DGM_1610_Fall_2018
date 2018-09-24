@@ -38,13 +38,16 @@ public class CharacterMove : MonoBehaviour {
 
 		//DoubleJump Code
 		if(Grounded){
-			DoubleJump = true;
+			DoubleJump = false;
 		}
 
 		if(Input.GetKeyDown (KeyCode.Space)&& !DoubleJump && !Grounded){
 			Jump();
 			DoubleJump = true;
 		}
+
+		//Non-Stick Player
+		MoveVelocity = 0f;
 		
 		//This code makes the character move from side to side using A&D keys
 		if(Input.GetKey (KeyCode.D)){
