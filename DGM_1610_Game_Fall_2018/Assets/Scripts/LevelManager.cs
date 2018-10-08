@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
-	public GameObject CurrentCheckPoint
-	private Controller2D Player;
+	public GameObject CurrentCheckPoint;
+	public Rigidbody2D Player;
 
 	//Particles
 	public GameObject DeathParticle;
@@ -22,20 +22,20 @@ public class LevelManager : MonoBehaviour {
 
 	//Use this for initialization
 	void Start () {
-		Player = FindObjectOfType<Rigidbody2D> ();
+		// Player = FindObjectOfType<Rigidbody2D> ();
 	}
 
 	public void RespawnPlayer (){
-		StartCoroutine ("RespawnPlayerCo")
+		StartCoroutine ("RespawnPlayerCo");
 	}
 
 	public IEnumerator RespawnPlayerCo (){
 		//Generate Death Particles
-		Instantiate (DeathParticle, Player.Transform.Position, Player.transform.rotation)
+		Instantiate (DeathParticle, Player.transform.position, Player.transform.rotation);
 
 		//Hide Player
-		Player.enabled = false;
-		Player.GetComponent<Renderer> ().enabed = false;
+		// Player.enabled = false;
+		Player.GetComponent<Renderer> ().enabled = false;
 		
 		//Gravity Reset
 		GravityStore = Player.GetComponent<Rigidbody2D>().GravityScale;
@@ -47,10 +47,21 @@ public class LevelManager : MonoBehaviour {
 
 		//Debug Message
 		Debug.Log ("Player Respawn");
-		
 
-	}
+		//Respawn Delay
+		yield return new WaitForSeconds (RespawnDelay);
 
+		//Gravity restore
+		Player.GetComponent<Rigidbody2D>().GravityScale = GravityStore;
 
-	
+		//Match Players transform position
+		Player.transform.position = CurrentCheckPoint.transform.position;
+
+		//Show Player
+		// Player.enables = true;
+		Player.GetComponent<Renderer> ().enabled = true;
+
+		//Spawn Particle
+		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
+		}	
 	}
