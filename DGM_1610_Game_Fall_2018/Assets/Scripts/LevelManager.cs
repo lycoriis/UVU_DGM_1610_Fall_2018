@@ -25,43 +25,44 @@ public class LevelManager : MonoBehaviour {
 		// Player = FindObjectOfType<Rigidbody2D> ();
 	}
 
-	public void RespawnPlayer (){
-		StartCoroutine ("RespawnPlayerCo");
-	}
+		public void RespawnPlayer (){
+			StartCoroutine ("RespawnPlayerCo");
+		}
 
-	public IEnumerator RespawnPlayerCo (){
-		//Generate Death Particles
-		Instantiate (DeathParticle, Player.transform.position, Player.transform.rotation);
+		public IEnumerator RespawnPlayerCo(){
+			
+			//Generate Death Particles
+			Instantiate (DeathParticle, Player.transform.position, Player.transform.rotation);
 
-		//Hide Player
-		// Player.enabled = false;
-		Player.GetComponent<Renderer> ().enabled = false;
-		
-		//Gravity Reset
-		GravityStore = Player.GetComponent<Rigidbody2D>().GravityScale;
-		Player.GetComponent<Rigidbody2D>().GravityScale = 0f;
-		Player.GetComponent<Rigidbody2D>().Velocity = Vector2.zero;
+			//Hide Player
+			// Player.enabled = false;
+			Player.GetComponent<Renderer> ().enabled = false;
+			
+			//Gravity Reset
+			GravityStore = Player.GetComponent<Rigidbody2D>().gravityScale;
+			Player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+			Player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-		//Point Penalty
-		ScoreManager.AddPoints(-PointPenaltyOnDeath);
+			//Point Penalty
+			ScoreManager.AddPoints(-PointPenaltyOnDeath);
 
-		//Debug Message
-		Debug.Log ("Player Respawn");
+			//Debug Message
+			Debug.Log ("Player Respawn");
 
-		//Respawn Delay
-		yield return new WaitForSeconds (RespawnDelay);
+			//Respawn Delay
+			yield return new WaitForSeconds (RespawnDelay);
 
-		//Gravity restore
-		Player.GetComponent<Rigidbody2D>().GravityScale = GravityStore;
+			//Gravity restore
+			Player.GetComponent<Rigidbody2D>().gravityScale = GravityStore;
 
-		//Match Players transform position
-		Player.transform.position = CurrentCheckPoint.transform.position;
+			//Match Players transform position
+			Player.transform.position = CurrentCheckPoint.transform.position;
 
-		//Show Player
-		// Player.enables = true;
-		Player.GetComponent<Renderer> ().enabled = true;
+			//Show Player
+			// Player.enables = true;
+			Player.GetComponent<Renderer> ().enabled = true;
 
-		//Spawn Particle
-		Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
+			//Spawn Particle
+			Instantiate (RespawnParticle, CurrentCheckPoint.transform.position, CurrentCheckPoint.transform.rotation);
 		}	
 	}
