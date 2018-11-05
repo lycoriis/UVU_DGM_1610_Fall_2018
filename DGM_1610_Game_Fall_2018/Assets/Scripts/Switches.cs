@@ -67,37 +67,37 @@ public class Switches : MonoBehaviour {
 	// 	break;
 	// }
 
-//homework: research "each loops" write 5 switches
-		switch(Age){
-			case 0:
-				print("You are an infant");
-			break;
+//homework: research "eachloops" write 5 switches
+		// switch(Age){
+		// 	case 0:
+		// 		print("You are an infant");
+		// 	break;
 			
-			case 4:
-				print("You are a child");
-			break;
+		// 	case 4:
+		// 		print("You are a child");
+		// 	break;
 
-			case 13:
-				print("You are a teen");
-			break;
+		// 	case 13:
+		// 		print("You are a teen");
+		// 	break;
 
-			case 20:
-				print("You are an adult");
-			break;
+		// 	case 20:
+		// 		print("You are an adult");
+		// 	break;
 
-			default:
-				print("You are ageless");
-			break;
-		}
-		switch(Dead){
-			case "Dead":
-				print("You are dead.");
-			break;
+		// 	default:
+		// 		print("You are ageless");
+		// 	break;
+		// }
+		// switch(Dead){
+		// 	case "Dead":
+		// 		print("You are dead.");
+		// 	break;
 
-			default:
-				print("You are alive.");
-			break;
-		}
+		// 	default:
+		// 		print("You are alive.");
+		// 	break;
+		// }
 		// switch(){
 		// 	case:
 		// 		print("");
