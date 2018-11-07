@@ -8,6 +8,8 @@ public class Arrays : MonoBehaviour {
 
 	public string[] Jedi;
 
+	public string [] Pet;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -26,16 +28,29 @@ public class Arrays : MonoBehaviour {
 		
 		// print(Eggs[8]);
 
-		Jedi = new string[5];
+		// Jedi = new string[5];
 
-		Jedi[0] = "Obi Wan Kenobi";
-		Jedi[1] = "Yoda";
-		Jedi[2] = "Klondike";
-		Jedi[3] = "Mace Windu";
-		Jedi[4] = "Jar Jar Binks";
+		// Jedi[0] = "Obi Wan Kenobi";
+		// Jedi[1] = "Yoda";
+		// Jedi[2] = "Klondike";
+		// Jedi[3] = "Mace Windu";
+		// Jedi[4] = "Jar Jar Binks";
 
-		foreach(string item in Jedi){
-			print("Jedi Master " + item);
+		// foreach(string item in Jedi){
+		// 	print("Jedi Master " + item);
+		// }
+
+		Pet = new string [6];
+
+		Pet[0] = "dog";
+		Pet[1] = "cat";
+		Pet[2] = "bird";
+		Pet[3] = "snake";
+		Pet[4] = "rodent";
+		Pet[5] = "insect";
+
+		foreach (string item in Pet){
+			print("I want a pet " + item);
 		}
 
 	}
