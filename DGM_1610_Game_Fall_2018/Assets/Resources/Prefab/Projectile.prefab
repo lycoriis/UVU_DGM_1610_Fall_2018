@@ -94,6 +94,7 @@ MonoBehaviour:
   EnemyDeath: {fileID: 0}
   ProjectileParticle: {fileID: 0}
   PointsForKill: 10
+  TimeOut: 1
 --- !u!212 &212810665465108722
 SpriteRenderer:
   m_ObjectHideFlags: 1
