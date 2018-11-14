@@ -1502,8 +1502,10 @@ MonoBehaviour:
   CurrentCheckPoint: {fileID: 582521518}
   Player: {fileID: 242441628}
   Player2: {fileID: 242441625}
-  DeathParticle: {fileID: 0}
-  RespawnParticle: {fileID: 0}
+  DeathParticle: {fileID: 1774654163488970, guid: 3970c136fd2294341b79ca1387aa7f28,
+    type: 2}
+  RespawnParticle: {fileID: 1774654163488970, guid: 3970c136fd2294341b79ca1387aa7f28,
+    type: 2}
   RespawnDelay: 0.5
   PointPenaltyOnDeath: 500
 --- !u!4 &1989118012
