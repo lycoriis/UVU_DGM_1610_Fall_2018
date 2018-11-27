@@ -10,9 +10,9 @@ public class DestroyPlayer : MonoBehaviour {
 	void Start () {
 		LevelManager = FindObjectOfType <LevelManager>();
 	}
-	void OnTriggerEnter2D(Collider2D other){
-		if(other.name == "PC_Arc"){
-			LevelManager.RespawnPlayer();
+	void OnTriggerEnter2D (Collider2D other){
+		if (other.name == "PC_Arc"){
+			LevelManager.RespawnPlayerCo();
 		}	
 	}
 }

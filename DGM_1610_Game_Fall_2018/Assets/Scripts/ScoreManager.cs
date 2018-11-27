@@ -27,7 +27,4 @@ public class ScoreManager : MonoBehaviour {
 		Score += PointsToAdd;
 	}
 
-		// public static void reset () {
-		// Score=0
-		//}	
-	}
+}
