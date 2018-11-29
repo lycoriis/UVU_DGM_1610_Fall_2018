@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HealthManager : MonoBehaviour {
 	public static int Health;
@@ -20,6 +21,7 @@ public class HealthManager : MonoBehaviour {
 		//If health goes below 0 it stays at 0, need to figure out RESPAWN/Death
 		if (Health <= 0){
 			Health = 0;
+			SceneManager.LoadScene(2);
 		}
 		//Health cannot go higher than 10
 		if (Health > 10){
