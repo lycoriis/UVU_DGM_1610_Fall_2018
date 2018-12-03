@@ -8,8 +8,8 @@ public class HealthReduce : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D Other){
 		if (Other.GetComponent<Rigidbody2D> () == null)
-		return;
-
-	HealthManager.AddPoints (HealthToAdd);
+			return;
+		if(Other.name == "PC_Arc")
+			HealthManager.AddPoints (HealthToAdd);
 	}
 }
