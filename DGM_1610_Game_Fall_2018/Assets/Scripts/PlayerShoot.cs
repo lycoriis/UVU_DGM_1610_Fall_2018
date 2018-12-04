@@ -10,7 +10,7 @@ public class PlayerShoot : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Projectile = Resources.Load("Prefab/Projectile") as GameObject;
+		Projectile = Resources.Load("Prefab/ProjectileForFire") as GameObject;
 		//Projectile = GameObject.Find("Projectile");
 		
 	}
