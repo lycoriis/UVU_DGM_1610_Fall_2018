@@ -18,6 +18,8 @@ public class CharacterMove : MonoBehaviour {
 	//Non-Stick Player
 	private float MoveVelocity;
 
+	public Animator animator;
+
 	// Use this for initialization
 	void Start () {
 	
