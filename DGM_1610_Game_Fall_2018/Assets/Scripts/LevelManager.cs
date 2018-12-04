@@ -32,8 +32,8 @@ public class LevelManager : MonoBehaviour {
 		}
 
 		public IEnumerator RespawnPlayerCo(){
-			print("respawningplayer");
 			//Generate Death Particles
+			print("respawningplayer");
 			Instantiate (DeathParticle, Player.transform.position, Player.transform.rotation);
 
 			//Hide Player
