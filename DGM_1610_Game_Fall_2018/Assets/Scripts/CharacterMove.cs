@@ -13,7 +13,7 @@ public class CharacterMove : MonoBehaviour {
 	public Transform GroundCheck;
 	public float GroundCheckRadius;
 	public LayerMask WhatIsGround;
-	private bool Grounded;
+	public bool Grounded;
 
 	//Non-Stick Player
 	private float MoveVelocity;
@@ -24,6 +24,10 @@ public class CharacterMove : MonoBehaviour {
 	void Start () {
 		animator.SetBool("IsWalking", false);
 		animator.SetBool("IsJumping", false);
+		//When Spawn, no moving allowed
+		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("arc_spawn_anim")){
+			print("No Movement");
+	}
 	}
 
 	void FixedUpdate () {
@@ -32,12 +36,9 @@ public class CharacterMove : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
-		//When Spawn, no moving allowed
-		// if(animator.GetBool("IsSpawn", true)){
-			
-		// }
 
+	if (!this.animator.GetCurrentAnimatorStateInfo(0).IsName("arc_spawn_anim")){
+						
 		//This code makes the character jump
 		if(Input.GetKeyDown (KeyCode.Space)&& Grounded){
 				Jump();
@@ -59,7 +60,7 @@ public class CharacterMove : MonoBehaviour {
 
 		//Non-Stick Player
 		MoveVelocity = 0f;		
-		
+			
 		//This code makes the character move from side to side using A&D keys
 		if(Input.GetKey (KeyCode.D)){
 			transform.localScale = new Vector3(0.25f,0.25f,1f);
@@ -78,7 +79,7 @@ public class CharacterMove : MonoBehaviour {
 		else if (Input.GetKeyUp (KeyCode.A)){
 			animator.SetBool("IsWalking", false);
 		}
-	
+	}
 		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 	}
 
