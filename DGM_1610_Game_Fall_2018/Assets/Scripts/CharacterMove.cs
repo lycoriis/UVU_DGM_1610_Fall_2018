@@ -80,7 +80,11 @@ public class CharacterMove : MonoBehaviour {
 			animator.SetBool("IsWalking", false);
 		}
 	}
-		GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+	//Stop sliding upon respawn
+	if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("arc_spawn_anim")){
+		MoveVelocity = 0;
+	}
+	GetComponent<Rigidbody2D>().velocity = new Vector2(MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 	}
 
 	public void Jump (){
