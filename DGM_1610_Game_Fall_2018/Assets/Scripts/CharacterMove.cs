@@ -26,7 +26,7 @@ public class CharacterMove : MonoBehaviour {
 		animator.SetBool("IsJumping", false);
 		//When Spawn, no moving allowed
 		if (this.animator.GetCurrentAnimatorStateInfo(0).IsName("arc_spawn_anim")){
-			print("No Movement");
+			
 	}
 	}
 
