@@ -63,7 +63,7 @@ public class CharacterMove : MonoBehaviour {
 			
 		//This code makes the character move from side to side using A&D keys
 		if(Input.GetKey (KeyCode.D)){
-			transform.localScale = new Vector3(0.25f,0.25f,1f);
+			transform.localScale = new Vector3(8f,8f,1f);
 			MoveVelocity = MoveSpeed;
 			animator.SetBool("IsWalking", true);
 		}
@@ -72,7 +72,7 @@ public class CharacterMove : MonoBehaviour {
 		}
 
 		if(Input.GetKey (KeyCode.A)){
-			transform.localScale = new Vector3(-0.25f,0.25f,1f);
+			transform.localScale = new Vector3(-8f,8f,1f);
 			MoveVelocity = -MoveSpeed;
 			animator.SetBool("IsWalking", true);
 		}
